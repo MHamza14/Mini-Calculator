@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: aquamarine;
+        }
+        a{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+        }
+        #num1 {
+            border-radius: 20px;
+            margin: 10px 10px 10px 10px ;
+            padding: 10px 10px 10px 10px;
+            background-color: antiquewhite;
+        }
+        
+        #num2 {
+            border-radius: 20px;
+            margin: 10px 10px 10px 10px ;
+            padding: 10px 10px 10px 10px;
+            background-color: antiquewhite;
+        }
+
+        input {
+            border-radius: 20px;
+            margin: 10px 10px 10px 10px ;
+            padding: 10px 10px 10px 10px;
+            background-color: antiquewhite;
+            font-size: larger;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<h1> Addition </h1>
+<form class="form" onsubmit="doSum(); return false">
+    <a>Your First  number: </a><input type="number" id="num1">
+    <a>Your Second number: </a><input type="number" id="num2">
+    <button>Submit</button>
+    <h3>Your Result: </h3>
+    <h3 id="result"></h3>
+</form>
+<hr>
+<h1> Subtraction </h1>
+<form class="form" onsubmit="doSub(); return false">
+    <a>Your First  number: </a><input type="number" id="sub1">
+    <a>Your Second number: </a><input type="number" id="sub2">
+    <button>Submit</button>
+    <h3>Your Result: </h3>
+    <h3 id="sub"></h3>
+</form>
+<hr>
+<h1> Multiplication </h1>
+<form class="form" onsubmit="doMul(); return false">
+    <a>Your First  number: </a><input type="number" id="mul1">
+    <a>Your Second number: </a><input type="number" id="mul2">
+    <button>Submit</button>
+    <h3>Your Result: </h3>
+    <h3 id="mul"></h3>
+</form>
+<hr>
+<h1> Division </h1>
+<form class="form" onsubmit="doDiv(); return false">
+    <a>Your First  number: </a><input type="number" id="div1">
+    <a>Your Second number: </a><input type="number" id="div2">
+    <button>Submit</button>
+    <h3>Your Result: </h3>
+    <h3 id="div"></h3>
+</form>
+<hr>
+<body>
+    
+    <script>
+        function doSum() {
+            let num1 = +document.querySelector("#num1").value;
+            let num2 = +document.querySelector("#num2").value;
+            
+            let result = num1 + num2;
+
+            console.log("Num1: ", num1);
+            console.log("Num2: ", num2);
+            console.log("Your Result: ", result);
+            document.querySelector("#result").innerHTML = result;
+        }
+        function doSub() {
+            let num1 = +document.querySelector("#sub1").value;
+            let num2 = +document.querySelector("#sub2").value;
+            
+            let sub = num1 - num2;
+
+            console.log("Num1: ", num1);
+            console.log("Num2: ", num2);
+            console.log("Your Result: ", sub);
+            document.querySelector("#sub").innerHTML = sub;
+        }
+
+        function doMul() {
+            let num1 = +document.querySelector("#mul1").value;
+            let num2 = +document.querySelector("#mul2").value;
+            
+            let mul = num1 * num2;
+
+            console.log("Num1: ", num1);
+            console.log("Num2: ", num2);
+            console.log("Your Result: ", mul);
+            document.querySelector("#mul").innerHTML = mul;
+        }
+        function doDiv() {
+            let num1 = +document.querySelector("#div1").value;
+            let num2 = +document.querySelector("#div2").value;
+            
+            let div = num1 / num2;
+
+            console.log("Num1: ", num1);
+            console.log("Num2: ", num2);
+            console.log("Your Result: ", mul);
+            document.querySelector("#div").innerHTML = div;
+        }
+        
+// //Variable for String
+// let myName = "Hamza";
+// alert(myName);
+
+// myName = "Khan";
+// alert(myName);
+
+//================================================
+//Vaiable for number
+// let MyNum = 50;
+// let MyNum1 = 10;
+
+// let result = MyNum + MyNum1;
+// console.log("result: ",result);
+//     </script>
+</body>
+</html>
