@@ -4,79 +4,161 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mini Calculator</title>
     <style>
-        h1{
-            text-align: center;
-            background-color: aquamarine;
-        }
-        a{
-            font-family: 'Courier New', Courier, monospace;
-            font-size: larger;
-        }
-        #num1 {
-            border-radius: 20px;
-            margin: 10px 10px 10px 10px ;
-            padding: 10px 10px 10px 10px;
-            background-color: antiquewhite;
-        }
-        
-        #num2 {
-            border-radius: 20px;
-            margin: 10px 10px 10px 10px ;
-            padding: 10px 10px 10px 10px;
-            background-color: antiquewhite;
-        }
+    body, html {
+        margin: 0;
+    }
+    form {
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }   
 
-        input {
-            border-radius: 20px;
-            margin: 10px 10px 10px 10px ;
-            padding: 10px 10px 10px 10px;
-            background-color: antiquewhite;
-            font-size: larger;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+    h3{
+        align-content: center;
+        font-size: xx-large;
+        padding: 5px 10px 5px 10px;
+        text-align: center;
+    }
+
+    h1{
+        align-self: center;
+        text-align: center;
+        width: 250px;
+        color: whitesmoke;
+        background-color: crimson;
+        border-radius: 15px;
+        height: fit-content;
+        box-shadow: 2px 5px #888888;
+    }
+
+    a{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+        color: rgb(25, 0, 0);
+        font-weight: bold;
+    }
+    .FirstRow {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        background-color: antiquewhite;
+    }
+    .FirstRow> .Add
+    {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-grow: 1;
+        background-color: tomato;
+    }
+    .FirstRow> .Sub
+    {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        flex-grow: 1;
+        background-color: burlywood;
+    }
+    .SecondRow {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        background-color: antiquewhite;
+    }
+    .SecondRow> .Mul
+    {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-grow: 1;
+        background-color: yellowgreen;
+    }
+    .SecondRow> .Div
+    {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        flex-grow: 1;
+    }        
+
+    input {
+
+        text-align: end;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: auto;
+        border-radius: 20px;
+        margin: 5px 5px 5px 5px ;
+        padding: 5px 5px 5px 5px;
+        background-color: antiquewhite;
+        font-size: larger;
+        font-family: cursive; 
+        flex-direction: column;
+    }
+
+    button {
+        padding: 10px 10px 10px 10px ;
+        width: fit-content;
+        background-color: rgb(137, 0, 0);
+        color: whitesmoke;
+        font-size: large;
+        border-radius: 10px;
+        margin: 10px 10px;
+    }
+        
     </style>
 </head>
-<h1> Addition </h1>
-<form class="form" onsubmit="doSum(); return false">
-    <a>Your First  number: </a><input type="number" id="num1">
-    <a>Your Second number: </a><input type="number" id="num2">
-    <button>Submit</button>
-    <h3>Your Result: </h3>
-    <h3 id="result"></h3>
-</form>
-<hr>
-<h1> Subtraction </h1>
-<form class="form" onsubmit="doSub(); return false">
-    <a>Your First  number: </a><input type="number" id="sub1">
-    <a>Your Second number: </a><input type="number" id="sub2">
-    <button>Submit</button>
-    <h3>Your Result: </h3>
-    <h3 id="sub"></h3>
-</form>
-<hr>
-<h1> Multiplication </h1>
-<form class="form" onsubmit="doMul(); return false">
-    <a>Your First  number: </a><input type="number" id="mul1">
-    <a>Your Second number: </a><input type="number" id="mul2">
-    <button>Submit</button>
-    <h3>Your Result: </h3>
-    <h3 id="mul"></h3>
-</form>
-<hr>
-<h1> Division </h1>
-<form class="form" onsubmit="doDiv(); return false">
-    <a>Your First  number: </a><input type="number" id="div1">
-    <a>Your Second number: </a><input type="number" id="div2">
-    <button>Submit</button>
-    <h3>Your Result: </h3>
-    <h3 id="div"></h3>
-</form>
-<hr>
+<div class="FirstRow">
+    <div class="Add">
+        <h1> Addition </h1>
+        <form class="form" onsubmit="doSum(); return false">
+            <a>Your First  number: </a><input type="number" id="num1">
+            <a>Your Second number: </a><input type="number" id="num2">
+            <button>Submit</button>
+            <a>Your Result: <h3 id="result"></h3></a>
+        </form>
+    </div>
+    <div class="Sub">
+        <h1> Subtraction </h1>
+        <form class="form" onsubmit="doSub(); return false">
+            <a>Your First  number: </a><input type="number" id="sub1">
+            <a>Your Second number: </a><input type="number" id="sub2">
+            <button>Submit</button>
+            <a>Your Result: <h3 id="sub"></h3></a>
+        </form>
+    </div>
+</div>
+<div class="SecondRow">
+    <div class="Mul">
+        <h1> Multiplication </h1>
+        <form class="form" onsubmit="doMul(); return false">
+            <a>Your First  number: </a><input type="number" id="mul1">
+            <a>Your Second number: </a><input type="number" id="mul2">
+            <button>Submit</button>
+            <a>Your Result: <h3 id="mul"></h3></a>
+        </form>
+    </div>
+    <div class="Div">
+        <h1> Division </h1>
+        <form class="form" onsubmit="doDiv(); return false">
+            <a>Your First  number: </a><input type="number" id="div1">
+            <a>Your Second number: </a><input type="number" id="div2">
+            <button>Submit</button>
+            <a>Your Result:<h3 id="div"></h3></a>
+        </form>
+    </div>
+</div>
 <body>
-    
-    <script>
+<script>
         function doSum() {
             let num1 = +document.querySelector("#num1").value;
             let num2 = +document.querySelector("#num2").value;
@@ -123,20 +205,6 @@
             document.querySelector("#div").innerHTML = div;
         }
         
-// //Variable for String
-// let myName = "Hamza";
-// alert(myName);
-
-// myName = "Khan";
-// alert(myName);
-
-//================================================
-//Vaiable for number
-// let MyNum = 50;
-// let MyNum1 = 10;
-
-// let result = MyNum + MyNum1;
-// console.log("result: ",result);
-//     </script>
+</script>
 </body>
 </html>
